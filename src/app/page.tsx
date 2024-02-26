@@ -9,14 +9,14 @@ import {
   Button,
   AbsoluteCenter,
   Link,
-  Image
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 export default function App() {
   return (
     <Flex height={'100%'} width={'100%'}>
       <Flex background={'gray.100'} width={'50%'} height={'100vh'} justifyContent={'flex-start'} alignItems={'center'} pl={10}>
-        <Image src='/bilhetes-orange.png' maxW={'50%'} maxH={'50%'} />
+        <Image alt="Ticket" src='/ticket.png' width={500} height={200} />
       </Flex>
       <AbsoluteCenter>
         <Flex align={'center'} justify={'center'} height={'100vh'}>
@@ -28,10 +28,10 @@ export default function App() {
             </CardHeader>
             <CardBody>
               <Input mt={5} placeholder="usuário" width={'100%'} />
-              <Input mt={5} placeholder="senha" width={'100%'} type="password" />
+              <Input mt={5} placeholder="senha" width={'100%'} type="password"   />
             </CardBody>
             <CardFooter flexDirection={'column'} gap={3}>
-              <Button colorScheme='blue' width={'100%'}>
+              <Button colorScheme='blue' width={'100%'} fontSize={'xs'}>
                 Acessar
               </Button>
               <Flex flexDirection={'row'}>
