@@ -1,95 +1,49 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Flex,
+  Input,
+  Text,
+  CardFooter,
+  Button,
+  AbsoluteCenter,
+  Link,
+  Image
+} from "@chakra-ui/react";
 
-export default function Home() {
+export default function App() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+    <Flex height={'100%'} width={'100%'}>
+      <Flex background={'gray.100'} width={'50%'} height={'100vh'} justifyContent={'flex-start'} alignItems={'center'} pl={10}>
+        <Image src='/bilhetes-orange.png' maxW={'50%'} maxH={'50%'} />
+      </Flex>
+      <AbsoluteCenter>
+        <Flex align={'center'} justify={'center'} height={'100vh'}>
+          <Card w={300}>
+            <CardHeader>
+              <Text textTransform='uppercase' fontWeight={'bold'}>
+                Login
+              </Text>
+            </CardHeader>
+            <CardBody>
+              <Input mt={5} placeholder="usuário" width={'100%'} />
+              <Input mt={5} placeholder="senha" width={'100%'} type="password" />
+            </CardBody>
+            <CardFooter flexDirection={'column'} gap={3}>
+              <Button colorScheme='blue' width={'100%'}>
+                Acessar
+              </Button>
+              <Flex flexDirection={'row'}>
+                <Text mr={2} fontSize={'xs'} width={'100%'}>Não tem uma conta?</Text>
+                <Link colorScheme='blue' width={'100%'} textAlign={'end'} fontSize={'xs'}>
+                  Registrar
+                </Link>
+              </Flex>
+            </CardFooter>
+          </Card>
+        </Flex>
+      </AbsoluteCenter>
+    </Flex>
+  )
 }
